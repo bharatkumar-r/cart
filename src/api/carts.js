@@ -25,10 +25,13 @@ export default ({ config, constants }) => {
 
         /** POST / - Create a new entity */
         create({ body }, res) {
+            console.info('inside create cart....', body);
+            console.info('inside create cart.constants.headers...', constants.headers);
             let url = constants.carts;
             httpReq
             .httpPost(url, body, false, constants.headers, false)
             .then(function (results) {
+                console.info('inside create cart..results..', results);
                 config.cartInfo = {};
                 config.cartInfo.id = results.id;
                 config.cartInfo.version = results.version;

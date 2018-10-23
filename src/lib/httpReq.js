@@ -45,7 +45,7 @@ const httpGet = (url, params, enableProxy, requestheaders, cacheConfig)=>{
 	}
 	config = Object.assign({}, config, params, cacheConfig);
 	return axios.get(url, config).then((response)=>{
-		return response;
+		return response.data;
 	}).catch((error)=>{
 		if (error.response) {
 			return ({'error': true, 'message': 'Service response error, Please try again later.', 
@@ -92,6 +92,7 @@ const httpPost = (url, params, enableProxy, requestheaders, cacheConfig)=>{
 	return axios.post(url, reqParams, config).then((response)=>{
 		return response.data;
 	}).catch((error)=>{
+        console.info('error....',error);
 		if (error.response) {
 			return ({'error': true, 'message': 'Service response error, Please try again later.', 
 				'type': 'ERROR', 'code': 1002});
@@ -132,7 +133,7 @@ const httpPut = (url, params, enableProxy, requestheaders)=>{
 	}
 	let reqParams = JSON.stringify(params)
 	return axios.put(url, reqParams, config).then((response)=>{
-		return response;
+		return response.data;
 	}).catch((error)=>{
 		if (error.response) {
 			return ({'error': true, 'message': 'Service response error, Please try again later.', 
@@ -165,7 +166,7 @@ const httpDelete = (url, params, enableProxy, requestheaders)=>{
 	}
 	config = Object.assign({}, config, params);
 	return axios.delete(url, config).then((response)=>{
-		return response;
+		return response.data;
 	}).catch((error)=>{
 		if (error.response) {
 			return ({'error': true, 'message': 'Service response error, Please try again later.', 

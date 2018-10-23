@@ -5,11 +5,6 @@
     "commerceTools": {
         "authUrl": "https://auth.commercetools.co",
         "apiUrl": "https://api.commercetools.co/",
-        "projectKey": "ecomstore",
-        "credentials": {
-            "clientId": "NYf6YcA6GVc7DR8ibLBQCQmJ",
-            "clientSecret": "3mNdQ3iLalxnTjCPfRhrhLMTWb-5Jao5"
-        },
-        "scopes": ["manage_project:ecomstore"]
+        "projectKey": "ecomstore"        
     }
 }

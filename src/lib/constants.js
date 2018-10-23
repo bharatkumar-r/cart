@@ -1,6 +1,6 @@
 export default ({ config }) => {
     return {
-        fetchToken: config.commerceTools.authUrl + "/oauth/token?grant_type=client_credentials&scope=manage_project:",
+        fetchToken: "http://localhost:8080/api/token",
         carts: config.commerceTools.apiUrl + config.commerceTools.projectKey +  "/carts/",        
         headers: {
             "Content-Type": "application/json",
